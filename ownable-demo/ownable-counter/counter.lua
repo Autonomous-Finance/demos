@@ -1,0 +1,58 @@
+Ownable = require "ownable"
+
+Counter = Counter or 0
+
+Handlers.add(
+  "increment",
+  Handlers.utils.hasMatchingTag("Action", "Increment"),
+  function(msg)
+    Ownable.onlyOwner(msg) -- ACCESS CONTROL
+    Counter = Counter + 1
+  end
+)
+
+Handlers.add(
+  "reset",
+  Handlers.utils.hasMatchingTag("Action", "Reset"),
+  function(msg)
+    Ownable.onlyOwnerOrSelf(msg) -- ACCESS CONTROL
+    Counter = 0
+  end
+)
+
+Handlers.add(
+  'counter',
+  Handlers.utils.hasMatchingTag("Action", "Counter"),
+  function(msg)
+    ao.send({
+      Target = msg.From,
+      Action = "Resp-Counter",
+      Counter = Counter
+    })
+  end
+)
+
+
+
+
+
+
+
+
+
+
+
+
+
+--[[
+By requiring the ownable package, we have
+
+  - Handlers loaded:
+    - "Get-Owner"
+    - "Transfer-Ownership"
+    - "Renounce-Ownership"
+
+  - API exposed:
+    - Ownable.onlyOwner()
+    - Ownable.onlyOwnerOrSelf()
+]]
