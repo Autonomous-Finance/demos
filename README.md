@@ -1,6 +1,4 @@
-# Demos on AO & Arweave
-
-## A collection of demo projects 
+# Demo Projects on AO & Arweave
 
 Created by Autonomous Finance for educational purposes in the community of builders on AO and the broader Arweave ecosystem.
 
