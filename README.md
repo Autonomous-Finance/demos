@@ -1,4 +1,4 @@
-# Demos on AO * Arweave
+# Demos on AO & Arweave
 
 ## A collection of demo projects 
 
