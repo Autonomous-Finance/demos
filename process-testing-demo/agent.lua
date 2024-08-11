@@ -1,17 +1,23 @@
 local limitOrder = require "limit-order"
 
--- TODO
+Handlers.add(
+  'Config',
+  Handlers.utils.hasMatchingTag('Action', 'Config'),
+  function(msg)
+    -- Set the config for the limit order to be executed
+    AMM = msg.Tags.AMM
+    TOKEN_A = msg.Tags.TokenA
+    TOKEN_B = msg.Tags.TokenB
+    DIRECTION = msg.Tags.Direction
+    INPUT_QTY = msg.Tags.InputQty
+    OUTPUT_QUANTITY_THRESHOLD = msg.Tags.OutputQuantityThreshold
+  end
+)
 
--- a config for the limit order to be executed
---[[
- - tokens
- - input quantity
- - price
-]]
-
--- a handler by which it is informed of updates in the pool reserves / fee
---[[
-  - simulates expected output calculation
-  - infers swap price from there
-  - decides whether to execute the limit order
-]]
+-- on receiving an AMM-Params-Update (i.e. potential swap price has changed)
+-- we handle by attempting to execute the limit order
+Handlers.add(
+  'AMM-Params-Update',
+  Handlers.utils.hasMatchingTag('Action', 'AMM-Params-Update'),
+  limitOrder.handleAmmParamsUpdate
+)
