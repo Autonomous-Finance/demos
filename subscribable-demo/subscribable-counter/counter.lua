@@ -2,17 +2,19 @@ Subscribable = require 'subscribable' ({
   useDB = false
 })
 
-Subscribable.PAYMENT_TOKEN = 'QHuiEyWvTr9--2ctHeYqgjC60APrVB-_1MMvU9EpMcI' -- DEXI token
-Subscribable.PAYMENT_TOKEN_TICKER = 'DTST'
-
 Subscribable.configTopicsAndChecks({
   ['counter-reset'] = {
     description = 'Counter was reset',
     returns = '{ "reached" : number }',
-    subscriptionBasis = "Payment of 1 " .. Subscribable.PAYMENT_TOKEN_TICKER
+    subscriptionBasis = "Whitelisting"
   }
 })
 
+Handlers.add(
+  "Register-Whitelisted-Subscriber",
+  Handlers.utils.hasMatchingTag("Action", "Register-Whitelisted-Subscriber"),
+  Subscribable.handleRegisterWhitelistedSubscriber
+)
 
 Counter = Counter or 0
 
