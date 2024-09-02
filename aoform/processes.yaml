@@ -1,0 +1,40 @@
+- name: Dog Token
+  file: token.lua
+  scheduler: _GQ33BkPtZrqxA84vM8Zk-N2aO0toNNu_C-l-rawrBA
+  module: cNlipBptaF9JeFAf4wUmpi43EojNanIBos3EfNrEOWo
+  tags:
+    - name: Ticker
+      value: DOG
+    - name: Name
+      value: Dog Token
+
+- name: Cat Token
+  file: token.lua
+  scheduler: _GQ33BkPtZrqxA84vM8Zk-N2aO0toNNu_C-l-rawrBA
+  module: cNlipBptaF9JeFAf4wUmpi43EojNanIBos3EfNrEOWo
+  tags:
+    - name: Ticker
+      value: CAT
+    - name: Name
+      value: Cat Token
+
+
+- name: Snake Token
+  file: token.lua
+  scheduler: _GQ33BkPtZrqxA84vM8Zk-N2aO0toNNu_C-l-rawrBA
+  module: cNlipBptaF9JeFAf4wUmpi43EojNanIBos3EfNrEOWo
+  tags:
+    - name: Ticker
+      value: SNAKE
+    - name: Name
+      value: Snake Token
+
+- name: Elephant Token
+  file: token.lua
+  scheduler: _GQ33BkPtZrqxA84vM8Zk-N2aO0toNNu_C-l-rawrBA
+  module: cNlipBptaF9JeFAf4wUmpi43EojNanIBos3EfNrEOWo
+  tags:
+    - name: Ticker
+      value: ELEPHANT
+    - name: Name
+      value: Elephant Token
