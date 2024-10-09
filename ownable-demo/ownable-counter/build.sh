@@ -4,7 +4,7 @@ npm list apm-tool || npm install -g apm-tool
 
 apm-tool download @autonomousfinance/ownable
 
-cp apm_modules/@autonomousfinance/ownable/main.lua ./ownable.lua
+cp apm_modules/@autonomousfinance/ownable/source.lua ./ownable.lua
 rm -rf apm_modules
 
 

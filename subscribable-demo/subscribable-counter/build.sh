@@ -4,7 +4,7 @@ npm list apm-tool || npm install -g apm-tool
 
 apm-tool download @autonomousfinance/subscribable
 
-cp apm_modules/@autonomousfinance/subscribable/main.lua ./subscribable.lua
+cp apm_modules/@autonomousfinance/subscribable/source.lua ./subscribable.lua
 rm -rf apm_modules
 
 if [[ "$(uname)" == "Linux" ]]; then
